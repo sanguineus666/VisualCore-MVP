@@ -8,8 +8,17 @@
     <h1>VisualCore™ MVP is running ✅</h1>
     <form action="/generate" method="post">
         <label for="prompt">Prompt:</label><br>
-        <input type="text" id="prompt" name="prompt" required><br><br>
+        <input type="text" id="prompt" name="prompt" required><br>
+        <input type="text" id="api_key" name="api_key" placeholder="OpenAI API Key" required><br>
         <input type="submit" value="Generate">
     </form>
+
+    {% if result %}
+        <hr>
+        <h2>IntentMind Output:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+
+    <p><small>{{ version }} — {{ watermark }}</small></p>
 </body>
 </html>
